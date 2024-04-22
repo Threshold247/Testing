@@ -1,0 +1,32 @@
+<!--extend head html from base.html-->
+{% extends "base.html" %}
+<!--This block inserts a custom title into the header of the template.-->
+{% block title %}Login Page{% endblock %}
+<!--import bootstrap5 form class-->
+{% from 'bootstrap5/form.html' import render_form %}
+<!--#3. This block provides the content of the website. The part that is going to vary between webpages.-->
+{% block content %}
+        <div class="container">
+		<h1>Login</h1>
+			{{ render_form(form) }}
+<!--        &lt;!&ndash; This is where our form will go. &ndash;&gt;-->
+<!--			<form action="{{ url_for('login') }}" method="post"  autocomplete="off" novalidate>-->
+<!--				{{ form.csrf_token }}-->
+<!--				<p id="email">-->
+<!--    			{{ form.email.label }} <br> {{ form.email(size=30) }}-->
+<!--&lt;!&ndash;			loops through errors 	&ndash;&gt;-->
+<!--				{% for error in form.email.errors %}-->
+<!--&lt;!&ndash;			lists the error in red&ndash;&gt;-->
+<!--				<span style="color:red">{{ error }}</span>-->
+<!--				{% endfor %}-->
+<!--				</p>-->
+<!--				<p id="password">-->
+<!--				{{ form.password.label }} <br> {{ form.password(size=30) }}-->
+<!--				{% for error in form.password.errors %}-->
+<!--				<span style="color:red">{{ error }}</span>-->
+<!--				{% endfor %}-->
+<!--				</p>-->
+<!--				{{ form.submit_btn }}-->
+<!--			</form>-->
+        </div>
+{% endblock %}
